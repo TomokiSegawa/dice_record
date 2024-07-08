@@ -19,16 +19,14 @@ if page == "新規入力":
     st.header("新規入力")
     
     # フォーム入力
-    with st.form("input_form"):
-        character_name = st.text_input("キャラクター名")
-        date = st.date_input("年月日", min_value=datetime.date(2000, 1, 1))
-        dice_result = st.number_input("さいころの出目", min_value=0, max_value=100, step=1)
-        notes = st.text_area("備考")
+    character_name = st.text_input("キャラクター名")
+    date = st.date_input("年月日", min_value=datetime.date(2019, 1, 1))
+    dice_result = st.number_input("さいころの出目", min_value=0, max_value=100, step=1)
+    notes = st.text_area("備考")
+    submitted = st.button("記録する")
 
-        #エンターを押しても提出しないようにダミーを追加
-        st.text_input("", key="dummy", label_visibility="hidden")
-        
-        submitted = st.form_submit_button("記録する")
+      
+    
         
     if submitted:
         if character_name and date and dice_result is not None:
