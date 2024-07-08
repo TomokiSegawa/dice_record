@@ -24,6 +24,9 @@ if page == "新規入力":
         date = st.date_input("年月日", min_value=datetime.date(2000, 1, 1))
         dice_result = st.number_input("さいころの出目", min_value=0, max_value=100, step=1)
         notes = st.text_area("備考")
+
+        #エンターを押しても提出しないようにダミーを追加
+        st.text_input("", key="dummy", label_visibility="hidden")
         
         submitted = st.form_submit_button("記録する")
         
