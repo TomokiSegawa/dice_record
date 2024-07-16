@@ -1,8 +1,15 @@
+import os
+import json
 import streamlit as st
 import pandas as pd
 import datetime
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
+
+# 環境変数から認証情報を取得
+json_str = st.secrets["GOOGLE_APPLICATION_CREDENTIALS_JSON"]
+json_data = json.loads(json_str)
+credentials = service_account.Credentials.from_service_account_info(json_data)
 
 # Google Sheets API の設定
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
