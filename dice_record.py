@@ -13,7 +13,7 @@ credentials = service_account.Credentials.from_service_account_info(json_data)
 
 # Google Sheets API の設定
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-SAMPLE_SPREADSHEET_ID = '1LU7mBeBz2Nirp5H09kJMi7-dgmKLzXVVKMv_k7vCtIQ'  # スプレッドシートのIDを指定
+SAMPLE_SPREADSHEET_ID = '1N5Mc8_IRRwLU6JiKo49wro0GIPmh_qhJn1Gmfptvyjo'  # スプレッドシートのIDを指定
 SAMPLE_RANGE_NAME = 'Sheet1!A1:E1000'  # データを書き込む範囲を指定
 
 # 認証とシートサービスの作成
